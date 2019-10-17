@@ -2,17 +2,15 @@
     <v-layout>
         <v-card hover class="mx-auto blue lighten-5"
             max-width="900"
-            min-width="900"
-            v-for="brand in brands" 
-            :key="brand.entity_id" 
-            @click="brandDetail(brand.entity_id)">
+            min-width="900">
             <v-container fluid>
                 <v-row dense>
                     <v-col
                     v-for="brand in brands"
                     :key="brand.entity_id"
                     >
-                        <v-card>
+                        <v-card 
+                        @click="brandDetail(brand.entity_id)">
                             <v-card-title v-text="brand.name"></v-card-title>
                             <v-card-text class="text-left">
                                 <div><label>States:</label><span class="ps-2">{{brand.state_registrations | numberOfState}}</span></div>
