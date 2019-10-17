@@ -1,6 +1,6 @@
 <template>
     <v-layout>
-        <v-card class="mx-auto cyan lighten-4"
+        <v-card class="mx-auto orange lighten-5"
         max-width="900"
         min-width="900">
             <v-responsive :aspect-ratio="16/9">
@@ -8,7 +8,7 @@
                     <h2> {{brand.name}} </h2>
                 </v-card-title>
                 <v-card-text class="text-left">
-                    <v-list dense class="cyan lighten-4">
+                    <v-list dense class="orange lighten-5">
                         <v-subheader>STATES</v-subheader>
                         <v-list-item v-for="state in brand.state_registrations" :key="state.registrationNumber">
                             <v-list-item-content class="text-left">
@@ -17,7 +17,7 @@
                             </v-list-item-content>
                         </v-list-item>
                     </v-list>
-                    <v-list dense class="cyan lighten-4">
+                    <v-list dense class="orange lighten-5">
                         <v-list-item>
                             <v-list-item-content class="text-left">
                                 <div class="d-inline-flex align-center">
