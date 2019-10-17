@@ -1,6 +1,6 @@
 <template>
     <v-layout>
-        <v-card hover class="mx-auto"
+        <v-card hover class="mx-auto blue lighten-5"
             max-width="900"
             min-width="900"
             v-for="brand in brands" 
