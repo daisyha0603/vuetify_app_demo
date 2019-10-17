@@ -15,8 +15,8 @@
                         <v-card>
                             <v-card-title v-text="brand.name"></v-card-title>
                             <v-card-text class="text-left">
-                                <div><label>States</label>: {{brand.state_registrations | numberOfState}}</div>
-                                <div><label>Available to</label>:<v-icon>mdi-calendar</v-icon><span>{{brand.available_date}}</span></div>
+                                <div><label>States:</label><span class="ps-2">{{brand.state_registrations | numberOfState}}</span></div>
+                                <div><label>Available to:</label><v-icon class="ps-2">mdi-calendar</v-icon><span>{{brand.available_date}}</span></div>
                             </v-card-text>
                             <v-card-actions>
                                 <v-checkbox v-model="brand.is_active" label="Active"></v-checkbox>

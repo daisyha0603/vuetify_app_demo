@@ -21,8 +21,8 @@
                                 <v-list-item>
                                     <v-list-item-content class="text-left">
                                         <div class="d-inline-flex align-center">
-                                            <label>Abv </label>
-                                            <span>{{brand.abv}}</span>
+                                            <label>Abv: </label>
+                                            <span class="ps-2">{{brand.abv}}</span>
                                         </div>
                                     </v-list-item-content>
                                 </v-list-item>
@@ -30,7 +30,7 @@
                                     <v-list-item-content class="d-inline-flex text-left">
                                         <div class="d-inline-flex align-center">
                                             <label>Available to: </label>
-                                            <v-icon>mdi-calendar</v-icon>
+                                            <v-icon class="ps-2">mdi-calendar</v-icon>
                                             <span>{{brand.available_date}}</span>
                                         </div>
                                     </v-list-item-content>
