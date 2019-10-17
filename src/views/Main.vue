@@ -1,19 +1,33 @@
 <template>
-    <v-container>
-        <v-layout>
-            <v-flex xs12 sm6 md4>
-                <v-card hover v-for="brand in brands" :key="brand.entity_id" @click="brandDetail(brand.entity_id)">
-                    <v-card-title>
-                        <h2> {{brand.name}} </h2>
-                    </v-card-title>
-                    
-                    <v-card-text>
-                        <span>State: {{brand.state_registrations ? brand.state_registrations.length : 0 }}</span>
-                    </v-card-text>
-                </v-card>
-            </v-flex>
-        </v-layout>
-    </v-container>
+    <v-layout>
+        <v-card hover class="mx-auto"
+            max-width="900"
+            min-width="900"
+            v-for="brand in brands" 
+            :key="brand.entity_id" 
+            @click="brandDetail(brand.entity_id)">
+            <v-container fluid>
+                <v-row dense>
+                    <v-col
+                    v-for="brand in brands"
+                    :key="brand.entity_id"
+                    >
+                        <v-card>
+                            <v-card-title v-text="brand.name"></v-card-title>
+                            <v-card-text class="text-left">
+                                <div><label>States</label>: {{brand.state_registrations | numberOfState}}</div>
+                                <div><label>Available to</label>:<v-icon>mdi-calendar</v-icon><span>{{brand.available_date}}</span></div>
+                            </v-card-text>
+                            <v-card-actions>
+                                <v-checkbox v-model="brand.is_active" label="Active"></v-checkbox>
+                            </v-card-actions>
+                        </v-card>
+                    </v-col>
+                </v-row>
+            </v-container>
+            
+        </v-card>
+    </v-layout>
       
 </template>
 <script>
@@ -22,6 +36,11 @@ export default {
     data() {
         return {
             brands: []
+        }
+    },
+    filters: {
+        numberOfState(state_registrations) {
+            return state_registrations ? state_registrations.length : 0;
         }
     },
     created() {

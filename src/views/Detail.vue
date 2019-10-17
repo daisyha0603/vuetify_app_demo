@@ -7,16 +7,39 @@
                         <v-card-title>
                             <h2> {{brand.name}} </h2>
                         </v-card-title>
-                        <v-card-text>
-                            <v-list-item>
-                                <v-list-item-content v-for="state in brand.state_registrations" :key="state.registrationNumber">
-                                    <v-flex xs12>
+                        <v-card-text class="text-left">
+                            <v-list dense>
+                                <v-subheader>STATES</v-subheader>
+                                <v-list-item v-for="state in brand.state_registrations" :key="state.registrationNumber">
+                                    <v-list-item-content class="text-left">
                                         <v-list-item-title>{{state.state}}</v-list-item-title>
                                         <v-list-item-subtitle>{{state.registrationNumber}}</v-list-item-subtitle>
-                                    </v-flex>
-                                </v-list-item-content>
-                            </v-list-item>
+                                    </v-list-item-content>
+                                </v-list-item>
+                            </v-list>
+                            <v-list>
+                                <v-list-item>
+                                    <v-list-item-content class="text-left">
+                                        <div class="d-inline-flex align-center">
+                                            <label>Abv </label>
+                                            <span>{{brand.abv}}</span>
+                                        </div>
+                                    </v-list-item-content>
+                                </v-list-item>
+                                <v-list-item>
+                                    <v-list-item-content class="d-inline-flex text-left">
+                                        <div class="d-inline-flex align-center">
+                                            <label>Available to: </label>
+                                            <v-icon>mdi-calendar</v-icon>
+                                            <span>{{brand.available_date}}</span>
+                                        </div>
+                                    </v-list-item-content>
+                                </v-list-item>
+                            </v-list>
                         </v-card-text>
+                        <v-card-actions>
+                            <v-checkbox v-model="brand.is_active" label="Active"></v-checkbox>
+                        </v-card-actions>
                     </v-responsive>
                 </v-card>
             </v-flex>
